@@ -1,0 +1,56 @@
+﻿@model NetCoreIdentity.Web.ViewModels.LoginViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+<h4>Üye Giriş Formu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" asp-for="RememberMe" /> Beni Hatırla
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Giriş Yap" class="btn btn-primary" />
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        </form>
+        <a class="btn btn-link" asp-action="ResetPassword">Şifremi Unuttum.</a>
+        <br />
+        <br />
+         
+        <a class="btn btn-info" asp-action="FacebookLogin">Facebook ile giriş yap</a>
+        <br />
+        <br />
+        <a class="btn btn-info" asp-action="FacebookLogin">Google ile giriş yap</a>
+        <br />
+        <br />
+        <a class="btn btn-info" asp-action="FacebookLogin">Microsoft ile giriş yap</a>
+
+    </div>
+</div>
+     
+</body>
+</html>
